@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/session.css">
+    <title>SignUP - FastFood</title>
+</head>
+<body>
+    <div>
+        <h1 class="Sessionheading" style="text-align: center; color: white;" >Register - FastFood</h1>
+        <div id="video-background">
+            <video autoplay loop muted>
+                <source src="/media/croppedBGvideo.mo4.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="signUpSession">
+        <form action="/user/create" class="signUpForm" method="POST">
+            <input type="text" class="sessionInput" name="fullName" required placeholder="Full Name">
+            <input type="email" class="sessionInput" name="email" required placeholder="Email">
+            <input type="tel" class="sessionInput" id="phone" name="phone" placeholder="phone" pattern="[6-9][0-9]{9}" maxlength="10" required>
+            <textarea name="address" id="address" class="sessionInput" cols="30" rows="10"placeholder="Enter your address"></textarea>
+            <input type="password" class="sessionInput" name="password" minlength="8" required placeholder="Password">
+            <input type="password" class="sessionInput" name="confirmPassword" minlength="8" required placeholder="Confirm Password"> 
+            <select name="gender" id="gender" class="sessionInput" required>
+                <option value="Male" style="color: black;">Male</option>
+                <option value="Female"style="color: black;">Female</option>
+                <option value="NotToSay" style="color: black;">NotToSay</option>
+                <option value="Other"style="color: black;">Other</option>
+            </select>
+            <input class="submitBtn" type="submit"><br>
+        </form>
+        <div class="other-log-medium">
+            <a href="/user/auth/google" class="socialIcons">
+                <img src="/media/google.png" alt="">
+            </a>  
+            <a href="/user/auth/facebook" class="socialIcons">
+                <img src="/media/fb.png" alt="">
+            </a>
+            <a href="#" class="socialIcons">
+                <img src="/media/Github.png" alt="">
+            </a>           
+        </div>
+        <p style="text-align: center;"><a href="/user/signIn">go to login page</a></p>
+    </div>
+</body>
+</html>

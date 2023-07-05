@@ -1,0 +1,27 @@
+<nav id="navigationBar">
+    <!-- logo image -->
+    <div class="logoImage"><img src="/media/logo.jpg" alt="..." /> <p style="color:white; font-size: 0.8rem;">Meal Market</p></div>
+    <div id="navRoute">
+    <ul>
+      <span id="closesNavBtn"><i class="fa-solid fa-arrow-left"></i></span>
+      <li><a href="/">Home</a></li>
+      <li><a href="/orderMeal/myOrders">MyOrder</a></li>
+      <li><a href="/searchMeal/favoriteMeal" id="FavoriteMealBtn">Favorites</a></li>
+      <li><a href="#Contact">Contact</a></li>
+    </ul>
+    </div>
+    <!-- if First Time open the message will be homePage but if we have logged In and then render the home page then message will be successFullLoggedIn -->
+    <% if(!locals.user) {%>
+      <div class="loginSignUpBtn">
+        <a href="/user/signUp" class="UserAccountBtn">signUp</a>
+        <a href="/user/signIn" class="UserAccountBtn">LogIn</a>
+      
+    </div>  
+    <% } else{%>
+      <%- include('ProfilePage/profileStatus') %>
+    <% } %>
+    <!-- <div id="hamburgerIcon">
+      <i class="fa-solid fa-bars" style="color: white;"></i>
+    </div> -->
+  </nav>
+  <link rel="stylesheet" href="/css/navbar.css">

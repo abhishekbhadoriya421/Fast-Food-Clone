@@ -1,0 +1,163 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  height: 52px;
+  margin-top: 3px;
+  padding: 1px 20px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0px 3px 8px -5px black;
+}
+
+.header .sessionLoginSignUpBtn .btn {
+  display: inline-block;
+  margin-top: 6px;
+  text-align: center;
+  padding: 5px 0px;
+  min-width: 80px;
+  min-height: 23px;
+  font-size: 1.1rem;
+  border: 1px solid black;
+  border-radius: 6px;
+  background-color: transparent;
+  text-decoration: none;
+  color: black;
+}
+
+.header .sessionLoginSignUpBtn .btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.header #profileStatus {
+  cursor: pointer;
+}
+
+.header #profileStatus .userProfileIcon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.header #profileStatus .userProfileIcon img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.header #profileStatus .username {
+  display: none;
+}
+
+.header #profileStatus .userDetails {
+  display: none;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  z-index: 5;
+  padding: 10px 0px;
+  top: 40px;
+  left: 25px;
+  box-shadow: 0px 0px 7px -1px #000000;
+  background-color: white;
+  border-radius: 10px;
+  width: 149px;
+}
+
+.header #profileStatus .userDetails p a {
+  text-decoration: none;
+  color: #706d6d;
+  font-size: 1.3rem;
+}
+
+.header #profileStatus .userDetails p a:hover {
+  color: #514d4d;
+  text-decoration: underline;
+}
+
+.header #searchMeal-Section {
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 0px black;
+}
+
+.header #searchMeal-Section input {
+  width: 80%;
+  height: 90%;
+}
+
+.header #searchMeal-Section #search-button {
+  border-left: 1px solid #676767;
+  border-radius: 0px;
+}
+
+.header #searchMeal-Section #search-button i {
+  color: #95909085;
+}
+
+.header .logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.header .logo img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width:700px) {
+  .header #profileStatus .userProfileIcon img {
+    width: 80%;
+    height: 80%;
+  }
+  .header #profileStatus .username {
+    font-size: 0.6rem;
+  }
+  .header #profileStatus .userDetails {
+    line-height: 22px;
+    width: 110px;
+  }
+  .header #profileStatus .userDetails p a{
+    font-size: 0.8rem;
+  }
+  #searchMeal-Section {
+    width: 65%;
+    min-width: 100px;
+    height: 32px;
+    margin: 0px;
+}
+.header #searchMeal-Section input {
+  width: 80%;
+  font-size: 9px;
+}
+  .header {
+    width: 100%;
+    height: 40px;
+    margin-top: 3px;
+    padding: 1px 1px;
+    justify-content: space-between;
+}
+.header #searchMeal-Section #search-button {
+  border-left: 0px solid #676767;
+}
+
+#search-button {
+  min-width: 13px;
+  border: 0px solid black;
+  font-size: 1rem;
+}
+  .header .sessionLoginSignUpBtn .btn {
+    min-width: 41px;
+    min-height: 18px;
+    font-size: 0.6rem;
+    margin-top: 3px;
+  }
+  .header .logo {
+   display: none;
+}
+}

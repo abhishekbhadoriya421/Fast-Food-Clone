@@ -1,0 +1,68 @@
+.footerContainer{
+    background-color: black;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 50px;
+}
+
+.footerContainer a{
+    text-decoration: none;
+    color: white;
+}
+
+.footerContainer p{
+   line-height: 3.5ch;
+}
+
+.footerContainer .heading{
+    color: rgb(167, 162, 162);
+    font-size: 1.2rem;
+}
+
+.about-Term-and-policy{
+    width: 20%;
+    min-width: 200px;
+}
+
+.loginSignUpBtn{
+    width: 30%;
+}
+.sessionBtn{
+    margin: 30px 0px 0px 10px;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding: 5px 0px;
+    border-radius: 8px;
+    border: 2px solid white;
+    background: transparent;
+
+}
+.sessionBtn:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+}
+
+
+@media (max-width:700px){
+    .footerContainer {
+        padding: 50px 20px;
+    }
+    .about-Term-and-policy {
+        width: 20%;
+        min-width: 130px;
+    }
+    .loginSignUpBtn {
+        width: 50%;
+    }
+    .sessionBtn {
+        margin: 15px 0px 0px 6px;
+        width: 55px;
+        height: 30px;
+        padding: 6px 0px;
+        font-size: 0.8rem;
+    }
+}

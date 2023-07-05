@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fast Food Clone</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Lobster&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js "></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <!-- Header Section Contains Navigation Section -->
+    <div class="welcomePage">
+      <!-- Navigation Bar -->
+      <%- include('../navigationBar') %>
+      <!-- SearchBox -->
+      <p class="searchHeading">Welcome To Fast Food</p>
+      <%- include('../searchBox') %>
+    </div>
+      <main>
+        <!-- Meals Section -->
+        <div id="meal-Section" class="margin">
+          <h1 class="heading">Collections:</h1>
+          <p class="para">
+            Explore curated lists of top restaurants, cafes, pubs, and bars in
+            India, based on trends
+          </p>
+          <div id="nextMeal">Next-></div>
+          <!-- Show All Meals Section  Random -->
+          <div id="mealList-Section">
+            <!-- Contains Meals which will be inserted using java script-->
+          </div>
+        </div>
+
+        <h1 class="margin heading">Catagories:</h1>
+        <%- include('../MealCategory')  %>
+        
+        <!-- Contact Section -->
+      <h1 class="margin heading">Contact Us:</h1>
+      <%- include('../contact')  %>
+      </main>
+
+    <section class="popularMealsFromcontry">
+       <%- include('../mealByCountry') %>
+    </section>
+    <footer>
+      <%- include('../footer') %>
+    </footer>
+    <script src="/js/home.js"></script>
+    <!-- font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/7d68f54f88.js"
+      crossorigin="anonymous"
+    ></script>
+
+   
+     <% if(flash.success && flash.success.length>0){ %>
+      <script>
+        new Noty({
+          theme: 'relax',
+          text: "<%= flash.success %>",
+          type: 'success',
+          layout: 'topRight',
+          timeout: 1500
+        }).show();
+      </script>
+     <% } %>
+  </body>
+</html>

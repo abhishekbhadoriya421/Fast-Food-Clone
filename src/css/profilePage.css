@@ -1,0 +1,164 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, #57cafd, #6f0fdc80);
+  padding-bottom: 50px;
+}
+
+body .header {
+  padding: 0px 20px;
+  box-shadow: 0px 0px 5px -1px black;
+}
+
+body .header #navigationBar .loginSignUpBtn {
+  display: none;
+}
+
+body .main {
+  padding: 50px 30px;
+}
+
+body .main .profileImage {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 0px black;
+  background-color: black;
+}
+
+body .main .profileImage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+body .main .profileImage img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+body .main .ProfileInput form button {
+  width: 110px;
+  margin-top: 13px;
+  height: 40px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  font-size: 1.2rem;
+}
+
+body .main .ProfileInput form button:hover {
+  background-color: white;
+  color: black;
+}
+
+body .main .addFriend {
+  margin-top: 2rem;
+  width: 8rem;
+  height: 2.5rem;
+  background-color: #f10303;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 9px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+body .main .profileInfo {
+  color: white;
+  margin-top: 30px;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+body .main .profileInfo #UpdateProfile {
+  display: inline-block;
+  color: #5f59af;
+  margin-top: 20px;
+}
+
+body .OtherDetailsSection {
+  margin-top: 50px;
+}
+
+body .OtherDetailsSection .selectOne {
+  border-bottom: 2px solid black;
+  display: flex;
+}
+
+body .OtherDetailsSection .selectOne a {
+  text-decoration: none;
+  display: inline-block;
+  width: 25%;
+  height: 39px;
+  text-align: center;
+  color: black;
+  font-size: 1.5rem;
+}
+
+body .OtherDetailsSection .friendListAndBio {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px;
+}
+
+body .OtherDetailsSection .friendListAndBio .FriendList {
+  width: 50%;
+}
+
+body .OtherDetailsSection .friendListAndBio .FriendList .Friends {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 60px;
+  width: 100%;
+  padding: 0px 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+body .OtherDetailsSection .friendListAndBio .FriendList .Friends .Userimage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+body .OtherDetailsSection .friendListAndBio .FriendList .Friends .Userimage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+body .OtherDetailsSection .friendListAndBio .FriendList .Friends .UnFriend {
+  text-align: end;
+}
+
+@media (max-width:700px){
+  *{
+    font-size: 0.9rem;
+  }
+  body .main .profileImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+  body .OtherDetailsSection .selectOne a {
+    width: 30%;
+    height: 30px;
+    font-size: 1rem;
+}
+body .OtherDetailsSection .friendListAndBio {
+  font-size: 0.8rem;
+  padding: 15px 20px;
+}
+body .OtherDetailsSection {
+  margin-top: 0px;
+}
+}

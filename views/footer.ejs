@@ -1,0 +1,39 @@
+<div class="footerContainer">
+    <div class="about-Term-and-policy">
+        <p class="heading">COMPANY</p>
+        <p><a href="">about us</a></p>
+        <p><a href="">Team</a></p>
+        <p><a href="">Careers</a></p>
+        <p><a href="">FastFood Blog</a></p>
+        <p><a href="">Bug Bounty</a></p>
+        <p><a href="">FastFood One</a></p>
+        <p><a href="">FastFood Corporate</a></p>
+        <p><a href="">FastFood Instamart</a></p>
+        <p><a href="">FastFood Genie</a></p>
+    </div>
+    <div class="about-Term-and-policy">
+        <p class="heading">CONTACTS</p>
+        <p><a href="">Help & Support</a></p>
+        <p><a href="">Partner with us</a></p>
+        <p><a href="">Ride with us</a></p>
+
+    </div>
+    <div class="about-Term-and-policy">
+        <p class="heading">LEGAL</p>
+        <p><a href="">Terms & Conditions</a></p>
+        <p><a href="">Refund & Cancellation</a></p>
+        <p><a href="">Privacy Policy</a></p>
+        <p><a href="">Cookies Policy</a></p>
+        <p><a href="">Terms offer</a></p>
+        <p><a href="">Terms payment</a></p>
+        <p><a href="">Phishing & Fraud</a></p>
+    </div>
+    <% if(!locals.user) {%>
+    <div class="loginSignUpBtn">
+        <a class="sessionBtn" href="/user/signIn">LogIn</a>
+        <a class="sessionBtn" href="/user/signUp">signUp</a>
+    </div>
+    <% } %>
+</div>
+
+<link rel="stylesheet" href="/css/footer.css">

@@ -1,0 +1,104 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: linear-gradient(90deg, skyblue, lightgreen);
+}
+
+body .heading {
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 8px;
+  width: 300px;
+  height: 38px;
+  color: white;
+  background: linear-gradient(90deg, #818aff, #ff3800b3);
+}
+
+body .heading .content {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  animation: myAnimation 2.5s linear 1s infinite;
+}
+
+@keyframes myAnimation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+body #favoriteMealContainer {
+  margin: 10px 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body #favoriteMealContainer .meal {
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+  width: 22%;
+  border-radius: 12px;
+  background-color: black;
+  cursor: pointer;
+}
+
+body #favoriteMealContainer .meal .mealImage {
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+body #favoriteMealContainer .meal .mealImage img {
+  width: 100%;
+  height: 100%;
+}
+
+body #favoriteMealContainer .meal .MealDetails {
+  display: none;
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 20%;
+  left: 10%;
+  color: white;
+}
+
+body #favoriteMealContainer .meal .MealDetails .mealName {
+  margin: 10px 0px;
+}
+
+body #favoriteMealContainer .meal .MealDetails .mealDescription {
+  height: 200px;
+  overflow: hidden;
+}
+
+@media (max-width:700px){
+  *{
+    font-size: 0.8rem;
+  }
+  body .heading .content {
+    font-size: 1.2rem;
+    padding: 5px;
+  }
+  body .heading {
+    width: 200px;
+    height: 25px;
+    border-radius: 4px;
+   }
+  body #favoriteMealContainer {
+    margin: 10px 10px;
+  }
+  body #favoriteMealContainer .meal {
+    width: 40%;
+  }
+}

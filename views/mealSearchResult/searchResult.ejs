@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="/css/searchResult.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js "></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <title>searchMealResult</title>
+</head>
+<body>
+    <%- include('../header') %>
+    <div class="search-Result-Heading">
+        <p class="Heading"><%= resultType  %></p>
+        <select name="mealCategory" class="mealSelection" id="mealCategory">
+            <option value="" selected >Select Category</option>
+            <option value="vegetarian">vegetarian</option>
+            <option value="Fish">Fish</option>
+            <option value="Chicken">Chicken</option>
+            <option value="Pork">Pork</option>
+            <option value="Beef">Beef</option>
+            <option value="Lamb">Lamb</option>
+            <option value="pasta">pasta</option>
+            <option value="rice">rice</option>
+            <option value="noodles">noodles</option>
+            <option value="dessert">dessert</option>
+            <option value="egg">egg</option>
+        </select>
+
+        <select name="meal-by-country" class="mealSelection" id="meal-by-country">
+            <option value="" selected >Select country</option>
+            <option value="Indian">Indian</option>
+            <option value="italian">italian</option>
+            <option value="Canadian">Canadian</option>
+            <option value="american">american</option>
+            <option value="british">british</option>
+            <option value="chinese">china</option>
+            <option value="french">french</option>
+            <option value="spanish">spanish</option>
+            <option value="japanese">japanese</option>
+        </select>
+        <button type="submit" id="FilterMealBtn">Filter</button>
+    </div>
+
+    <div class="search-Result-container">
+        <% if(meals !== undefined) {%>
+        <% meals.forEach(meal => { %>
+            <a href="/detail/mealDetail/<%=meal.idMeal %>" class="Meal">
+                <div class="Meal-image">
+                    <img src=<%=meal.strMealThumb %> alt="loading">
+                </div>
+                <div class="Meal-details">
+                    <p class="Meal-name"><%=meal.strMeal %></p>
+                    <p class="Meal-category"><%=meal.strCategory %></p>
+                    <p class="Rating">4.5*</p>
+                </div>
+                <div class="priceAndBuy">
+                    <p class="price"><span style="color:#499729d1;"><i class="fa-solid fa-indian-rupee-sign"></i><%= Math.floor(Math.random() * (2000 - 500 + 1)) + 500; %></p>
+                    <button type="submit" id="buy-btn">add</button>
+                </div>
+            </a>
+        <% });%>
+        <% } else{%>
+            <h1>Sorry <%=resultType %> Not Found </h1>
+        <% } %>
+    </div>
+
+    <%- include('../MealCategory')  %>
+    <%- include('../mealByCountry') %>
+    <%- include('../footer')  %>
+    <!-- Font Awesome Script for using icons --> 
+    <script src="/js/searchResult.js"></script>
+</body>
+</html>

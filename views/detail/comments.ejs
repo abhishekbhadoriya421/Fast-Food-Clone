@@ -1,0 +1,35 @@
+<h2 class="ReviewMealHeading">Name of Meal Review</h2>
+<div class="User_Comment_Like">
+    <div class="Like">
+        <% if(locals.user){ %>
+            <% if(meals.mealLikes.includes(locals.user.id)) {%>
+                <a href="/detail/Like/?id=<%=meals.id %>"  like="Liked" id="LikeBtn" > <i class="fa-solid fa-thumbs-up" style="color: #c70000;"></i></a> 
+            <% }else{ %>
+                <a href="/detail/Like/?id=<%=meals.id %>"  like="NotLiked" id="LikeBtn" > <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
+        <% } }%>
+        <span id="LikeCount"><% if(!locals.user) {%> <i class="fa-solid fa-thumbs-up" style="color: #c70000; font-size: 2rem;    margin: 0px 10px;"></i><% } %><%=meals.mealLikes.length%></span> 
+        <!-- like="NotLiked"  -->
+    </div>
+    <% if(locals.user){ %>
+    <form action="/detail/comment" id="CommentForm" method="post">
+        <input type="email" hidden name="userEmail" value="<%= locals.user.email %>">
+        <input type="text" hidden name="mealId" value="<%= meals.mealId %>">
+        <input type="text" id="CommentInputBox" placeholder="write comment" name="content" required>
+        <input type="submit" id="CommentSubmitbtn" value="Post">
+    </form>
+</div>
+    <% } %>
+<div class="userCommentContainer" id="commentContainer">
+    <% meals.mealComments.reverse().forEach(comment => { %>
+    <div id="userDetails">
+        <img id="UserImage" src="" alt="">
+        <span class="userEmail" id="comentUserId"><a href="/profile/userProfile/?id=<%=comment.userId %>"><%= comment.userEmail  %></a></span>
+        <p class="userContent">
+            <%= comment.content %>
+        </p>
+    </div>
+    <%  }); %>
+</div>
+
+<link rel="stylesheet" href="/css/comments.css">
+<script src="/js/commentLike.js"></script>

@@ -1,0 +1,112 @@
+.ReviewMealHeading {
+  margin: 2.2rem 0px;
+}
+
+#LikeBtn {
+  cursor: pointer;
+}
+
+.User_Comment_Like {
+  display: flex;
+}
+
+.User_Comment_Like .Like {
+  width: 30%;
+}
+
+.User_Comment_Like .Like #LikeBtn {
+  font-size: 2rem;
+  color: red;
+}
+
+.User_Comment_Like .Like #LikeCount {
+  font-size: 0.8rem;
+}
+
+.User_Comment_Like #CommentForm {
+  display: flex;
+  width: 60%;
+  margin-left: 10%;
+}
+
+.User_Comment_Like #CommentForm #CommentInputBox {
+  width: 85%;
+  border: 2px solid #b3b3b3;
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.User_Comment_Like #CommentForm #CommentSubmitbtn {
+  margin-left: 10px;
+  width: 80px;
+  height: 32px;
+  font-size: 1.1rem;
+  background: transparent;
+  border-radius: 7px;
+}
+
+.userCommentContainer {
+  width: 100%;
+  padding: 0px 10px;
+}
+
+.userCommentContainer #userDetails {
+  width: 95%;
+  margin-top: 50px;
+}
+
+.userCommentContainer #userDetails #UserImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #b3b3b3;
+  margin: 0px 10px;
+}
+
+.userCommentContainer #userDetails .userContent {
+  width: 80%;
+  margin-top: 1.2rem;
+  padding: 0px 10px;
+}
+
+@media (max-width:700px){
+  .User_Comment_Like .Like {
+    width: 10%;
+  }
+  .User_Comment_Like .Like #LikeBtn {
+    font-size: 1.5rem;
+  }
+  .User_Comment_Like #CommentForm {
+    width: 85%;
+    margin-left: 5%;
+  }
+  .User_Comment_Like #CommentForm #CommentInputBox {
+    width: 100%;
+    height: 31px;
+    font-size: 1rem;
+  }
+  .User_Comment_Like #CommentForm #CommentSubmitbtn {
+    margin-left: 5px;
+    width: 60px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .userCommentContainer #userDetails #UserImage {
+    width: 40px;
+    height: 40px;
+  }
+  #comentUserId a{
+    font-size: 0.8rem;
+  }
+  .userCommentContainer #userDetails .userContent {
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+    padding: 0px 15px;
+  }
+  .userCommentContainer #userDetails {
+
+    margin-top: 25px;
+  }
+}

@@ -1,0 +1,262 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.mealDetailsAndOrderContainer {
+  margin: 3rem 10%;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0px 0px 10px -3px black;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails .mealImage {
+  width: 40%;
+  height: 400px;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails .mealImage .image {
+  width: 90%;
+  height: 90%;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails .mealImage .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction {
+  width: 55%;
+  margin: 2rem;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction .chooseOneBtn {
+  display: flex;
+  width: 100%;
+  height: 3rem;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction .chooseOneBtn .DetailsAndInstructionBtn {
+  width: 50%;
+  height: 100%;
+  font-size: 1.5rem;
+  border: 0px;
+  cursor: pointer;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction .mealDetails {
+  width: 100%;
+  padding: 0.8rem 8%;
+  font-size: 1.2rem;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction .mealDetails .mealName {
+  text-align: center;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction .mealDetails .Para {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction .Instruction {
+  display: none;
+  background-color: #a2a2a2bf;
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  padding: 1.4rem 8%;
+  overflow-y: scroll;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction .Instruction .content {
+  width: 100%;
+  text-align: justify;
+  color: white;
+}
+
+.mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction .Instruction::-webkit-scrollbar {
+  display: none;
+}
+
+.mealDetailsAndOrderContainer .MoreEvent {
+  margin: 3rem 0%;
+  display: flex;
+}
+
+.mealDetailsAndOrderContainer .MoreEvent .moreDetails {
+  width: 100%;
+  margin: 0px 18px;
+}
+
+.mealDetailsAndOrderContainer .MoreEvent .moreDetails .mealName {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mealDetailsAndOrderContainer .MoreEvent .moreDetails .mealName .moreDetailsHead {
+  font-size: 1.5rem;
+}
+
+.mealDetailsAndOrderContainer .MoreEvent .moreDetails .mealName .showReviews {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.mealDetailsAndOrderContainer .MoreEvent .moreDetails .mealName .showReviews .diningReviews {
+  display: flex;
+}
+
+.mealDetailsAndOrderContainer .MoreEvent .moreDetails .mealName .showReviews .diningReviews .Review {
+  margin: 0px 5px;
+  text-align: center;
+  padding: 8px 0px;
+  border-radius: 3px;
+  width: 60px;
+  height: 35px;
+  color: white;
+  background-color: #42b742;
+  box-shadow: 0px 0px 6px -3px black;
+}
+
+.mealDetailsAndOrderContainer .MoreEvent .moreDetails .eventBtns button {
+  width: 90px;
+  height: 35px;
+  background-color: transparent;
+  color: red;
+  border: 1px solid red;
+  border-radius: 3px;
+}
+
+.mealDetailsAndOrderContainer .MoreEvent .moreDetails .eventBtns button:hover {
+  background-color: red;
+  color: white;
+}
+
+.mealDetailsAndOrderContainer .orderMealAndReviewSection {
+  width: 100%;
+}
+
+.mealDetailsAndOrderContainer .orderMealAndReviewSection .chooseOneBtn {
+  box-shadow: 0px 8px 5px -9px black;
+  height: 4rem;
+}
+
+.mealDetailsAndOrderContainer .orderMealAndReviewSection .chooseOneBtn button {
+  cursor: pointer;
+  font-size: 1.3rem;
+  width: 15%;
+  min-width: 130px;
+  height: 4rem;
+  border: 0px;
+  color: #9a9a9a;
+  background-color: transparent;
+}
+
+.mealDetailsAndOrderContainer .orderMealAndReviewSection .chooseOneBtn .active {
+  color: red;
+  border-bottom: 2px solid red;
+}
+
+.mealDetailsAndOrderContainer .orderMealAndReviewSection .OrderAndReview {
+  width: 100%;
+  padding: 0px 1rem;
+  border-left: 1px solid #a4a4a4;
+  border-right: 1px solid #bbbbbb;
+}
+
+.mealDetailsAndOrderContainer .orderMealAndReviewSection .OrderAndReview .orderMeal {
+  display: flex;
+}
+
+.mealDetailsAndOrderContainer .orderMealAndReviewSection .OrderAndReview .orderMeal .orderMealButton {
+  width: 200px;
+  min-width: 120px;
+  height: 50px;
+  margin: 50px auto;
+  color: white;
+  border: 0px;
+  background-color: red;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+}
+
+.mealDetailsAndOrderContainer .orderMealAndReviewSection .OrderAndReview .orderMeal #QuantityBtn {
+  display: none;
+}
+
+.mealDetailsAndOrderContainer .orderMealAndReviewSection .OrderAndReview .orderMeal .orderMealButton:hover {
+  background-color: #d50404;
+}
+
+.mealDetailsAndOrderContainer .orderMealAndReviewSection .OrderAndReview .relatedMeal {
+  display: none;
+}
+
+.mealDetailsAndOrderContainer .orderMealAndReviewSection .OrderAndReview .UserCommentAndReviews {
+  display: none;
+}
+
+@media (max-width:700px) {
+  .mealDetailsAndOrderContainer {margin: 3rem 3%;}
+  .mealDetailsAndOrderContainer .MoreEvent .moreDetails { margin: 0px 0px;}
+  .mealDetailsAndOrderContainer .MoreEvent .moreDetails .mealName .showReviews .diningReviews .Review {
+    margin: 0px 2px;
+    padding: 5px 0px;
+    width: 38px;
+    height: 24px;
+    font-size: 0.7rem;
+  }
+  .totalReview{font-size: 0.3rem;}
+  .mealDetailsAndOrderContainer .MoreEvent .moreDetails .mealName .moreDetailsHead {font-size: 1rem;}
+  .timing{font-size: 0.7rem;}
+  .mealDetailsAndOrderContainer .MoreEvent .moreDetails .eventBtns button {
+    width: 80px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .mealDetailsAndOrderContainer .mealImageAndDetails .mealImage {
+    width: 40%;
+    height: 40%;
+}
+  .mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction .chooseOneBtn .DetailsAndInstructionBtn {font-size: 0.8rem;height: 65%;}
+  .mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction {margin: 2rem 5px;width: 55%;}
+  .mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction .mealDetails div{font-size: 0.8rem;}
+  .mName{font-size: 1rem;}
+  .mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction .Instruction .content {font-size: 0.8rem;}
+  .mealDetailsAndOrderContainer .mealImageAndDetails .mealDetailsAndInstruction .Instruction {height: 231px;}
+  .mealDetailsAndOrderContainer .orderMealAndReviewSection .chooseOneBtn {height: 3rem;}
+  .mealDetailsAndOrderContainer .orderMealAndReviewSection .chooseOneBtn button {
+    font-size: 1rem;
+    width: 15%;
+    min-width: 90px;
+    height: 3rem;
+  }
+  .mealDetailsAndOrderContainer .orderMealAndReviewSection .OrderAndReview .orderMeal .orderMealButton {
+    width: 120px;
+    min-width: 100px;
+    height: 45px;
+    margin: 30px auto;
+    font-size: 1rem;
+}
+.mealDetailsAndOrderContainer .orderMealAndReviewSection .OrderAndReview {padding: 0px 0.5rem;}
+
+}

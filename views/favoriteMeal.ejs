@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Meal</title>
+    <link rel="stylesheet" href="/css/favoriteMeal.css">
+</head>
+<body>
+    <%- include('header.ejs') %>
+    <h1 class="heading"><p class="content">Favorite Meal List</p></h1>
+    <% if(favoriteMeals){%>
+    <div id="favoriteMealContainer">
+        <% favoriteMeals.forEach(meal => { %>
+            <a href="/detail/mealDetail/<%= meal.mealId %>" class="meal">
+                <div class="mealImage">
+                    <img src=<%= meal.mealImage %> alt="">
+                </div>
+                <div class="MealDetails">
+                    <h2 class="mealName"><%= meal.mealName %> </h2>
+                    <p class="mealDescription"><%= meal.mealInstruction %></p>
+                </div>
+            </a>
+        <% }); %>
+       
+    </div>
+    <% }else{ %>
+        <h1 style="margin-top: 50px;">No Favorite Meal Found!</h1>
+    <% } %>
+<script src="/js/favoriteMeal.js"></script>
+</body>
+</html>

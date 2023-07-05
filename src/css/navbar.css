@@ -1,0 +1,139 @@
+ /* Navigation-Bar */
+ #navigationBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #navRoute{
+    width:90%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Logo Image  */
+  #navigationBar .logoImage {
+    width: 10%;
+    margin: 0.2rem 0px 0px 0.5rem;
+  }
+
+  #navigationBar ul {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #navigationBar .logoImage img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  #closesNavBtn{
+    display: none;
+  }
+  
+  /* li text content */
+  #navigationBar ul li {
+    list-style: none;
+  }
+  
+  #navigationBar ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  #navigationBar ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  #hamburgerIcon{
+    display: none;
+  }
+
+  .loginSignUpBtn{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .UserAccountBtn{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    border-radius: 8px;
+  }
+  
+  .UserAccountBtn:hover{
+   background-color: white;
+   color: black;
+  }
+
+  #profileStatus{
+    margin-right:20px;
+    position: relative;
+  }
+
+  .userProfileIcon{
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+  }
+  .userProfileIcon:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  #profile{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  } 
+
+  .username{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -400%;
+    font-size: 0.8rem;
+    color: white;
+  }
+
+  .userDetails{
+    display: none;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 1.9;
+    z-index: 5;
+    background-color: rgb(231, 226, 226);
+    width: 130px;
+    position: absolute;
+    top: 100%;
+    left: -150%;
+  }
+
+  .userDetails p a{
+    text-decoration: none;
+    color: black;
+  }
+  .userDetails p a:hover{
+    color: rgb(0, 119, 255);
+  }
+  
+@media (max-width:700px){
+    #navRoute{
+      display: none;
+      flex-direction: column;
+    }
+    .UserAccountBtn{
+      width: 70px;
+      height: 27px;
+      padding: 4px;
+      border-radius: 5px;
+    }
+    
+}  

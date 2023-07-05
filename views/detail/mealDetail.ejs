@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mealDetail.css">
+    <title><%= meals.mealName %></title>
+</head>
+<body>
+    <!-- Including Header -->
+    <%- include('../header') %>
+    <!-- it contains about Meal and place order also reviews -->
+    <div class="mealDetailsAndOrderContainer">
+        <!-- the mealDetailsAndOrderContainer class is divided into two section [mealDetailsAndInstructionSection] [orderMealAndReviewSection]  -->
+        <section class="mealImageAndDetails">
+            <!-- Meal Image -->
+            <div class="mealImage">
+                <div class="image">
+                    <img src= <%= meals.mealImage %> alt="meal">
+                </div>
+            </div>
+
+            <!-- Meal Details And Instruction -->
+            <div class="mealDetailsAndInstruction">
+                <div class="chooseOneBtn">
+                    <button id="MealDetailBtn" class="DetailsAndInstructionBtn" style="background-color: white;  color:black ;">Details</button>
+                    <button id="MealInstructionBtn" class="DetailsAndInstructionBtn" style="background-color:#a2a2a2bf ; color: white;">Instruction</button>
+                </div>
+                <div class="mealDetails">
+                    <h2 class="mName" ><%= meals.mealName %></h2>
+                    <div class="Para"><p>Category</p> <p><%= meals.mealCategory  %></p></div>
+                    <div class="Para"><p>Price</p> <p> <i class="fa-solid fa-indian-rupee-sign"></i><%= meals.mealPrice  %></p></div>
+                    <div class="Para"><p>Meal Area</p> <p><%= meals.mealArea  %></p></div>
+                    <div class="Para FavoriteMeal"><p>Favorite</p> <p><%= meals.mealFavoriteCount %></p></div>
+                    <div class="Para videoLink"><p>video</p> <a target="_blank" href=<% meals.mealVideoLink %>>Link</a></div>
+                </div>
+                <div class="Instruction">
+                    <p class="content">
+                       <%= meals.mealInstruction %>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="MoreEvent">
+            <div class="moreDetails">
+                <div class="mealName">
+                    <p class="moreDetailsHead "><%= meals.mealArea   %></p> 
+                    <div class="showReviews">
+                        <div class="diningReviews"> <p class="Review">3.2</p> <p class="totalReview" >8 <br> Dining Reviews</p></div>
+                        <div class="diningReviews"> <p class="Review">4.0</p> <p class="totalReview" >1,311 <br> Delivery Reviews</p></div>
+                    </div>
+                </div>
+                <p class="timing" style="margin: 10px 0px;"><span style="color: rgb(255, 199, 94);">Open Now</span> - <span>7am - 3:15pm</span>, <span>7pm - 10pm </span> <span>(Today)</span></p>
+                <div class="eventBtns ">
+                    <button>Directions</button>
+                    <button style="margin: 0px 10px;">Bookmark</button>
+                    <button>Share</button>
+                </div>
+                
+            </div>
+        </section>
+        <!-- This Section is having Three section  -->
+        <section class="orderMealAndReviewSection">
+            <div class="chooseOneBtn">
+                <button id="OrderBtn" class="active">Order</button>
+                <button id="MoreMealBtn">MoreMeal</button>
+                <button id="ReviewBtn" >Review</button>
+            </div>
+            <!-- This is Default Content -->
+            <div class="OrderAndReview">
+                <section class="orderMeal">
+                    <button id="addMeal" class="orderMealButton">+ buy</button>
+                    <button id="QuantityBtn" class="orderMealButton"> <span  id="increaseQuantity" style="cursor: pointer; font-size: 1.5rem;">+</span><a href="/orderMeal/orderMealPage/?id=<%= meals.mealId %>&quantity=" id="quantityCount" style="text-decoration: none; color: white; cursor: pointer; width: 60%;">1</a><span id="decreaseQuantity" style="cursor: pointer; font-size: 1.5rem;">-</span></button>
+                    
+                    <a <% if(locals.user){%>
+                        id="FavoriteMeal"
+                        <% }%>
+                        class="orderMealButton" href="/searchMeal/myFavorite/?id=<%= meals.mealId  %>" style="cursor: pointer;" favMeal=<%=favoriteMeal %>>AddToFavorite</a>
+                </section>
+                <section class="relatedMeal"><%-include('relatedMeal')  %></section>
+                <section class="UserCommentAndReviews"> <%-include('comments')  %></section> 
+            </div>
+        </section>
+    </div>
+    <%- include('../mealByCountry') %>
+    <%- include('../footer')  %>
+
+    <script src="/js/detailsMeal.js"></script>
+</body>
+</html>

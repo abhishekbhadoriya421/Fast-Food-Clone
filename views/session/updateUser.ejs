@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/session.css">
+    <title>Fast Food Clone</title>
+</head>
+<body>
+    <div>
+        <div id="video-background">
+            <video autoplay loop muted>
+                <source src="/media/croppedBGvideo.mo4.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <% if(target==='forgetPassword') {%>
+        <h2 class="Sessionheading" style="text-align: center; color: white;" >Enter your Registered Email</h2>
+        <div class="signUpSession">
+            <form action="/user/forgetPassword" class="signUpForm" method="POST">
+                <input type="email" class="sessionInput" name="email" required placeholder="Email"> 
+                <button class="submitBtn" type="ForgetPassword"> ForgetPassword </button>
+            </form>
+        </div>
+    <% }else if(target==='ForgetOTP') {%>
+        <h2 class="Sessionheading" style="text-align: center; color: white;" >Enter Your OTP</h2>
+        <div class="signUpSession">
+            <form action="/user/OTP" class="signUpForm" method="POST">
+                <input type="email" hidden name="email" value=<%= email %>>
+                <input type="text" class="sessionInput" name="OTP" required placeholder="Enter Your OTP">
+                <button class="submitBtn" type="submit"> submit </button>
+            </form>
+        </div>
+    <%}else if(target==='updateUser'){ %>
+        <h2 class="Sessionheading" style="text-align: center; color: white;" >Update user Detail here</h2>
+        <div class="signUpSession">
+            <form action="/user/updateSession" class="signUpForm" method="POST">
+                <input type="text" class="sessionInput" name="fullName" required placeholder="Full Name">
+                <input type="email" class="sessionInput" name="email" required placeholder="Email">
+                <input type="password" class="sessionInput" name="password" required placeholder="Password">
+                <input type="password" class="sessionInput" name="confirmPassword"required placeholder="Confirm Password"> 
+                <button class="submitBtn" type="submit"> submit </button>
+            </form>
+        </div>
+    <% }else if(target==='newUserOTP') {%>
+        <h2 class="Sessionheading" style="text-align: center; color: white;" >Enter Your OTP</h2>
+        <div class="signUpSession">
+            <form action="/user/createUserOTP" class="signUpForm" method="POST">
+                <input type="email" class="sessionInput" name="email" hidden required value=<%= user.email %>>
+                <input type="password" class="sessionInput" name="fullName" hidden required value=<%= user.fullName %>>
+                <input type="text" class="sessionInput" name="password" hidden required value=<%= user.password %>>
+                <input type="text" class="sessionInput" name="gender" hidden required value=<%= user.gender %>>
+                <input type="number" class="sessionInput" name="phone" required placeholder="phone" hidden value=<%= user.phone %>>
+                <input name="address" id="address" class="sessionInput" hidden value='<%=user.address %>'s/>
+                <input type="text" class="sessionInput" name="OTP" required placeholder="Enter Your OTP">
+                <button class="submitBtn" type="submit"> submit </button>
+            </form>
+        </div>
+    
+    <% } else if(target==='changePassword'){%>
+        <h2 class="Sessionheading" style="text-align: center; color: white;" >Enter new Password</h2>
+        <div class="signUpSession">
+            <form action="/user/changePassword" class="signUpForm" method="POST">
+                <input type="email" name="email" hidden value=<%= email %>>
+                <input type="password" class="sessionInput" name="password" required placeholder="Password">
+                <input type="password" class="sessionInput" name="confirmPassword"required placeholder="Confirm Password"> 
+                <button class="submitBtn" type="submit"> submit </button>
+            </form>
+        </div>
+    <% } %>
+</body>
+</html>

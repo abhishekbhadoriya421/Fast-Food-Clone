@@ -1,0 +1,20 @@
+<div id="profileStatus">
+    <div class="userProfileIcon">
+        <% if(locals.user.image) {%>
+        <img src='<%=locals.user.image %>' id="profile" alt="">
+        <% }else{ %>
+            <img src='https://www.thesoupspoon.com/wp-content/uploads/2014/11/user.jpg' id="profile" alt="">
+        <% } %>
+    </div>
+    <p class="username"><%= locals.user.email  %></p>
+    <aside class="userDetails">
+        <p><a href="/">home</a></p>
+        <p><a href="/profile/userProfile/?id=<%= locals.user.id %>">Profile</a></p>
+        <p><a href="">about</a></p>
+        <p><a href="/orderMeal/myOrders">myOrders</a></p>
+        <p><a href="/searchMeal/favoriteMeal">favoriteMeal</a></p>
+        <p><a href="">setting</a></p>
+        <p><a href="/user/destroySession">logOut</a></p>
+    </aside>
+</div>
+<script src="/js/userProfile.js"></script>

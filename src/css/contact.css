@@ -1,0 +1,31 @@
+/* Social Section*/
+.social-section {
+    background-color: #dcdcdc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 160px;
+    padding-top: 60px;
+  }
+  
+  .social-section ul {
+    list-style: none;
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .social-section ul li a{
+    text-decoration: none;
+    font-size: 2rem;
+  }
+  
+  @media (max-width:700px){
+    .social-section ul {
+      width: 70%;
+    }
+    .social-section ul li a i{
+      font-size: 2rem;
+    }
+  }

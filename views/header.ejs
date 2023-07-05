@@ -1,0 +1,15 @@
+<header class="header">
+    <!-- login And SignUp Buttons -->
+    <% if(!locals.user) {%>
+    <div class="sessionLoginSignUpBtn">
+        <a href="/user/signIn" class="btn">Login</a>
+        <a href="/user/signUp" class="btn">SignUp</a>
+    </div>
+    <% } else { %>
+        <%- include('ProfilePage/profileStatus') %>
+    <% } %>
+    <%- include('searchBox') %>
+
+    <div class="logo"><a href="/"><img src="/media/logo.jpg" alt="loading"></a></div>
+</header>
+<link rel="stylesheet" href="/css/header.css">

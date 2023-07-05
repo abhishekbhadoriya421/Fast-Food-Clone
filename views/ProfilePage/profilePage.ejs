@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/profilePage.css">
+    <title>Profile Page</title>
+</head>
+<body>
+    <header class="header">
+        <%- (include('../navigationBar'))  %>
+    </header>
+    <main class="main">
+        <div class="profileImage">
+            <% if(!image) {%>
+                <% if(gender==='Female') {%>
+                    <img src="https://www.nicepng.com/png/full/52-521023_female-png.png"  alt="Loading">
+                <% }else{ %>
+                    <img src="https://www.thesoupspoon.com/wp-content/uploads/2014/11/user.jpg" alt="Loading">
+                <% } %>
+                
+            <% }else{ %>
+                <img src='<%= image %>' alt="Loading">
+            <% } %>
+        </div>
+        <% if(locals.user.id=== id) {%>
+        <div class="ProfileInput">
+            <form action="/profile/updateImage" enctype="multipart/form-data" method="post">
+                <input type="file" name="profilePic" required placeholder="profile picture" > <br>
+                <input type="email" name="email" required hidden value="<%= user.email %>"> <br>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+        <% } %>
+        <% if(locals.user.id !== id) {%>
+        <% if(locals.user.friends.includes(id)){%>
+            <a href="/profile/createfriend/?id=<%= id %>&&type=unfriend"><button  class="addFriend" style="color: red; background-color: ghostwhite; border: 2px solid red;">Unfriend</button></a>
+        <% }else{ %>
+            <a href="/profile/createfriend/?id=<%= id %>&&type=addfriend"><button  class="addFriend" >AddFriend</button></a>
+        <% } %>
+        <% } %>
+        <div class="profileInfo">
+            <div class="name"><i class="fa-regular fa-address-card" style="margin: 0px 5px;"></i><%= fullName %></div>
+            <div class="email"><i class="fa-regular fa-envelope" style="margin: 0px 5px;"></i><%= email %></div>
+            <% if(phone) {%>
+            <div class="phone"><i class="fa-solid fa-address-book" style="margin: 0px 5px;"></i> <%= phone %></div>
+            <% }else{%>
+                <div class="phone"><i class="fa-solid fa-address-book" style="margin: 0px 5px;"></i>00000-00000</div>
+            <%} %>
+            <% if(address) {%>
+            <div class="address"><i class="fa-solid fa-location-dot" style="margin: 0px 5px;"></i> <%= address %></div>
+            <% }else{ %>
+            <div class="address"><i class="fa-solid fa-location-dot" style="margin: 0px 5px;"></i> <h3>No Address is Provided yet !</h3></div>
+            <% } %>
+          
+        </div>
+    </main>
+    <div class="OtherDetailsSection">
+        <div class="selectOne">
+            <a style="color: blue; border-bottom: 3px solid blue;">Friends
+                <span class="TotalFriendsCount"><%= friends.length %></span></a>
+            <a href="">FavoriteMeals</a>
+            <a href="">Add To Cart</a>
+            <a href="">MyOrder</a>
+        </div>
+        <div class="friendListAndBio">
+            <div class="FriendList">
+                <h2 style="margin-bottom: 10px;">Friends</h2>
+                <% if(friends.length===0) {%>
+                    <h1>No Friends!</h1>
+                <% } %>
+                <% friends.forEach(friend => { %>
+                    <div class="Friends">
+                        <div class="Userimage">
+                            <% if(friend.image){ %>
+                            <img src=<%= friend.image %> alt="Loading">
+                            <% }else{ %>
+                                <img src="https://www.thesoupspoon.com/wp-content/uploads/2014/11/user.jpg" alt=<%= friend.name %>>
+                            <% } %>
+                        </div>
+                        <p class="UserName"><%=friend.name %></p> 
+                        <% if(locals.user.id===id) {%>
+                        <a href="/profile/createfriend/?id=<%= friend.id %>&&type=unfriend" class="UnFriend" style="color: red; cursor: pointer;">UnFriend</a>
+                        <% } %>
+                    </div>
+                <%  }); %>
+            </div>
+        </div> 
+    </div>
+    <script
+    src="https://kit.fontawesome.com/7d68f54f88.js"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>

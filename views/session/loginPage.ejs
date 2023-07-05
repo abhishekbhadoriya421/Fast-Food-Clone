@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/session.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js "></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <title>LogInPage Fast Food</title>
+</head>
+
+<body>
+    <div>
+        <h1 class="Sessionheading" style="text-align: center; color: white;" >Login - FastFood</h1>
+        <div id="video-background">
+            <video autoplay loop muted>
+                <source src="/media/croppedBGvideo.mo4.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    </p>
+    <div class="loginSession">
+        <p class="regis-req" style="text-align: center;">Don't have an account?. Register <a class="reg-req" href="/user/signUp">Here</a>
+        <form action="/user/createSession" class="loginForm" method="POST">
+            <input type="email" class="sessionInput" id="email" name="email" required placeholder="Email">
+            <input type="password" class="sessionInput" id="password" name="password" required placeholder="Password">
+            <input class="submitBtn" type="submit"><br>
+            <a class = "res-Pass" href="/user/forgetPasswordPage">Forgot Password??</a> 
+        </form>
+        <div class="other-log-medium">
+            <a href="/user/auth/google" class="socialIcons">
+                <img src="/media/google.png" alt="">
+            </a>  
+            <a href="/user/auth/facebook" class="socialIcons">
+                <img src="/media/fb.png" alt="">
+            </a>
+            <a href="/user/auth/github" class="socialIcons">
+                <img src="/media/Github.png" alt="">
+            </a>           
+        </div>
+    </div>
+    <% if(flash.success && flash.success.length>0){ %>
+        <script>
+          new Noty({
+            theme: 'relax',
+            text: "<%= flash.success %>",
+            type: 'success',
+            layout: 'topRight',
+            timeout: 1500
+          }).show();
+        </script>
+       <% } %>
+
+       <% if(flash.error && flash.error.length>0){ %>
+        <script>
+          new Noty({
+            theme: 'relax',
+            text: "<%= flash.error %>",
+            type: 'error',
+            layout: 'topRight',
+            timeout: 1500
+          }).show();
+        </script>
+       <% } %>
+</body>
+</html>
